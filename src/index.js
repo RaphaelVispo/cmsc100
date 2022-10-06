@@ -11,7 +11,7 @@ async function start () {
 
 
     const addr = await fastify.listen({
-      port: '8080'
+      port: "8080"
     });
 
 
