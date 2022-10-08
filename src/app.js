@@ -4,11 +4,14 @@ import { createTodo } from './services/todos/create-todo.js';
 import { general } from './services/general/index.js';
 import { gettodos } from './services/todos/get-todo.js';
 import { updateTodo } from './services/todos/update-todo.js';
+import { deletetodos } from './services/todos/delete-todo.js';
+import sensible from '@fastify/sensible';
 
 const prefix = '/api';
 
 export async function build () {
   const fastify = Fastify({ logger: true });
+  fastify.register(sensible);
 
   fastify.get(prefix, general);
 
@@ -23,6 +26,9 @@ export async function build () {
 
   // update a todo using ta param
   fastify.put(`${prefix}/todo/:todoId`, updateTodo);
+
+  // delete todo
+  fastify.delete(`${prefix}/todo/:todoId`, deletetodos);
 
   return fastify;
 }
