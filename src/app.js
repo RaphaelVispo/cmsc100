@@ -15,17 +15,17 @@ export async function build () {
 
   const service = new Service();
 
-  const openAPIGlueOptions ={
+  const openAPIGlueOptions = {
     specification,
     service,
     prefix
-  }
+  };
 
   const swaggerOptions = {
     openapi: specification,
     routePrefix: '/docs',
     exposeRoute: true
-  }
+  };
 
   fastify.register(swagger, swaggerOptions);
   fastify.register(openAPIGlue, openAPIGlueOptions);
