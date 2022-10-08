@@ -28,7 +28,7 @@ describe('Get many to todo should work', async () => {
     result.length.must.not.be.above(5);
   });
 
-  it('should return a list of objects with default limit', async () => {
+  it('should return a list of objects with limit=2', async () => {
     const respose = await app.inject({
       method: 'GET',
       url: `${prefix}/todo?limit=2`
