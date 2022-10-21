@@ -1,7 +1,7 @@
 export const general = {
   '/': {
     get: {
-      summary: 'API general',
+      summary: 'API General Example',
       operationId: 'general',
       responses: {
         200: {
@@ -19,7 +19,10 @@ export const general = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     }
   }
 };

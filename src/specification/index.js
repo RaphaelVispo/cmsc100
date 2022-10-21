@@ -9,5 +9,10 @@ export const specification = {
   },
 
   paths,
-  components
+  components,
+  security: [
+    {
+      cookieAuth: []
+    }
+  ]
 };

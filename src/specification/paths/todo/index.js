@@ -1,9 +1,8 @@
-
 export const todo = {
   '/todo/:todoId': {
     get: {
       summary: 'Get a todo',
-      operationId: 'gettodos',
+      operationId: 'getTodo',
       parameters: [
         {
           $ref: '#/components/parameters/TodoParameterId'
@@ -20,10 +19,13 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     },
     put: {
-      summary: 'Update todo',
+      summary: 'Update a todo',
       operationId: 'updateTodo',
       parameters: [
         {
@@ -52,11 +54,14 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     },
     delete: {
-      summary: 'Delete todo',
-      operationId: 'deletetodos',
+      summary: 'Delete a todo',
+      operationId: 'deleteTodo',
       parameters: [
         {
           $ref: '#/components/parameters/TodoParameterId'
@@ -78,13 +83,15 @@ export const todo = {
             }
           }
         }
-      }
+      },
+      security: [
+        {}
+      ]
     }
   },
-
   '/todo': {
     post: {
-      summary: 'Create todo',
+      summary: 'Create a todo',
       operationId: 'createTodo',
       requestBody: {
         description: 'THe request body for todo',
@@ -108,12 +115,14 @@ export const todo = {
             }
           }
         }
-      }
-
+      },
+      security: [
+        {}
+      ]
     },
     get: {
       summary: 'Get many todo',
-      operationId: 'getManyTodos',
+      operationId: 'getManyTodo',
       parameters: [
         {
           name: 'limit',
@@ -134,14 +143,14 @@ export const todo = {
                 items: {
                   $ref: '#/components/schemas/TodoObject'
                 }
-
               }
             }
           }
         }
-      }
-
+      },
+      security: [
+        {}
+      ]
     }
-
   }
 };
