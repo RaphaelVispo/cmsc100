@@ -5,6 +5,8 @@ import { getManyTodos } from './todos/get-many-todo.js';
 import { gettodos } from './todos/get-todo.js';
 import { updateTodo } from './todos/update-todo.js';
 import { registerUser } from './users/register-user.js';
+import { login } from './users/login.js';
+import { logout } from './users/logout.js';
 
 export class Service {
   constructor (app) {
@@ -20,4 +22,6 @@ export class Service {
 
     // userFunctions
     registerUser=registerUser
+    login=login
+    logout=logout
 }

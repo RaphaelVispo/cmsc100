@@ -16,6 +16,39 @@ export const user = {
         {}
       ]
     }
+  },
+  '/login': {
+    post: {
+      summary: 'Logs in a user',
+      operationId: 'login',
+      requestBody: {
+        $ref: '#/components/requestBodies/LoginUser'
+      },
+      responses: {
+        200: {
+          $ref: '#/components/responses/SuccessfulResponse'
+        }
+      },
+      security: [
+        {}
+      ]
+    }
+  },
+  '/logout': {
+    get: {
+      summary: 'Logs out a user',
+      operationId: 'logout',
+      responses: {
+        200: {
+          $ref: '#/components/responses/SuccessfulResponse'
+        }
+      },
+      security: [
+        {
+          cookieAuth: []
+        }
+      ]
+    }
   }
 
 };
